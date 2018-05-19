@@ -1,0 +1,16 @@
+<div id="publicContent" class="content" data-id="{{todo._id}}">
+{{#each todos as |todo|}}
+ <!-- Template structure of db -->
+  <h3 data-id="{{todo._id}}" class="all-todos"> Title: {{todo.title}}</br><small>Place: {{todo.location}}<br>Owner: {{todo.owner}}</small></h3>
+
+  <div data-id="{{todo._id}}">
+    <p class="public-content">{{#if todo.text}}
+      {{todo.text}}
+    {{else}}
+      No todos provided.
+    {{/if}}</p>
+  </div>
+  <!-- Check mark -->
+
+{{/each}}
+</div>
