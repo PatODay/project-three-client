@@ -55,7 +55,7 @@ small CSS issue or a larger question regarding our app functionality.
 
 ## Links
 
-- [The client-side repository](https://github.com/Team-Tomorrow/Bucket_list_client)
-- [The back-end repository](https://github.com/Team-Tomorrow/Bucket_list_api)
-- [The link to the deployed web application](https://team-tomorrow.github.io/Bucket_list_client/)
-- [The link to the deployed heroku page (api)](https://bucket-list-wdi.herokuapp.com/)
+- [The client-side repository](https://github.com/GiantSlayer1913/project-three-client)
+- [The back-end repository](https://github.com/GiantSlayer1913/project-three-api)
+- [The link to the deployed web application](https://giantslayer1913.github.io/project-three-client/)
+- [The link to the deployed heroku page (api)](https://rocky-falls-93559.herokuapp.com/)
