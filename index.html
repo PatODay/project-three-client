@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Bucket List</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Jacques+Francois+Shadow" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Vast+Shadow" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+  <!-- Beginning of navbar -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- Brand name -->
+        <span class="navbar-brand" id="brand">Bucket List</span>
+      </div>
+      <!-- All navigation to the right side -->
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Explanation of Sign Up model-->
+        <li><a data-toggle="modal" data-target="#modal1" class="a-sign-up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Sign Up!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <input required class="user-account" type="email" name="credentials[email]" id="sign-up-email" placeholder="Email">
+                  <input required class="user-account" type="password" name="credentials[password]" id="sign-up-password" placeholder="Password">
+                  <input required class="user-account" type="password" name="credentials[password_confirmation]" id="sign-up-password-confirmation" placeholder="Confirm password">
+                  <input type="submit" name="submit" value="Sign up">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="failedmessage1 fm"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Explanation of Sign In model-->
+        <li><a data-toggle="modal" data-target="#modal2" class="a-sign-in"><span class="glyphicon glyphicon-log-in"></span> Sign In</a></li>
+        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Sign In!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <input required class="user-account" type="email" name="credentials[email]" id="sign-in-email" placeholder="Email">
+                  <input required class="user-account" type="password" name="credentials[password]" id="sign-in-password" placeholder="Password">
+                  <input type="submit" name="submit" value="Sign in!">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="failedmessage2 fm"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explanation on Sign Out -->
+        <li>
+          <a class="sign-out"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
+        </li>
+        <!-- Explanation on Password Change mpodel -->
+        <li><a data-toggle="modal" data-target="#modal3" class="a-change-pass"><span class="glyphicon glyphicon-edit"></span> Change Password</a></li>
+        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Change Password</h4>
+              </div>
+              <div class="modal-body">
+                <form id="change_pass">
+                  <input required type="password" name="passwords[old]" placeholder="Old Password">
+                  <input required type="password" name="passwords[new]" placeholder="New Password">
+                  <input type="submit" value="Change Password ">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <h2 class="failedmessage3 fm"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explanation of Completed tasks model -->
+        <li><a data-toggle="modal" data-target="#modal4" class="completed_tasks"><span class="glyphicon glyphicon-edit"></span> Completed</a></li>
+        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Completed</h4>
+              </div>
+              <div class="modal-body" id="completed_task_div">
+                <div class="content" id="completed_task">
+                </div>
+            </div>
+              <div class="modal-footer">
+                <h2 class="failedmessage4 fm"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Explanation of Completed tasks model -->
+
+        <!-- BONUS FEATURE: ALL PUBLIC TODOS -->
+        <li><a data-toggle="modal" data-target="#modal5" class="public_todos"><span class="glyphicon glyphicon-edit"></span> Public Buckets</a></li>
+        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalLabel">Public Bucket Lists</h4>
+              </div>
+              <div class="modal-body" id="public_div">
+                <div class="content" id="public_task">
+                </div>
+            </div>
+              <div class="modal-footer">
+                <h2 class="failedmessage5 fm"></h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of BONUS FEATURE html-->
+
+      </ul>
+    </div>
+  </nav>
+  <!-- End of navbar -->
+
+  <!-- Cover Page -->
+
+  <!-- End of cover page -->
+  <!-- Content -->
+  <div id="main-div" class="row container-fluid main-content">
+    <video autoplay muted loop id="myVideo">
+      <source src="https://video.wixstatic.com/video/11062b_10927dd4d14046e4ac23f51f0a5448b3/1080p/mp4/file.mp4" type="video/mp4">
+      </video>
+    <!-- Users Messages -->
+    <div id="main-content" class="container-fluid">
+      <h4 class="user-message"></h4>
+    </div>
+
+    <div class="container col-lg-6 col-xs-12">
+
+    <div id="createContent" class="content">
+      <h3 class="myHeader">Create a Bucket Todo List</h3>
+      <div class="content" id="create_content">
+        <form id="createForm">
+        <p><strong> Title: </strong><input required type="text" name="todo[title]" placeholder="Title"></p>
+        <p><strong> Place: </strong><input type="text" name="todo[location]" placeholder="Place"></p>
+        <textarea required type="text" name="todo[text]" maxlength="2000" rows="4" cols="40" placeholder="Write a description of what you want to accomplish"></textarea>
+      </br><input type="submit" name="submit" value="Save!">
+      </form>
+    </div>
+    </div>
+    </div>
+    <!-- Users Todo List -->
+    <div class="container col-lg-6 col-xs-12">
+      <!-- Handlebar for all todos -->
+      <div id="myAllContent" class="content">
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
